@@ -1,0 +1,359 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MCH API",
+    "description": "API for MCH CDMS ver. 0.1",
+    "version": "0.1",
+    "license": {
+      "name": "CC-BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  "paths": {
+    "/API/stations": {
+      "get": {
+        "description": "Retrieve al stations id from the MCH database",
+        "summary": "Retrieve metadata for all stations in MCH database",
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "MCH english database": {
+                    "value": "[\n    {\n        \"Station\": \"01AECLIF\",\n        \"StationName\": \"Eclipse Falls\",\n        \"StationName2\": \"\",\n        \"TimeZone\": \"GUY\",\n        \"Longitude\": 0,\n        \"Latitude\": 0,\n        \"Altitude\": 69.0,\n        \"Longitude2\": -60.0632,\n        \"Latitude2\": 7.6349,\n        \"DMSlongitude\": \"060\\u00b003'48''\",\n        \"DMSLatitude\": \"07\\u00b038'06''\",\n        \"Statee\": \"R1\\r\",\n        \"RegManagmt\": null,\n        \"Catchment\": null,\n        \"Subcatchment\": null,\n        \"OperatnlRegion\": null,\n        \"HydroReg\": null,\n        \"RH(2)\": null,\n        \"Municipality\": null,\n        \"CodeB\": null,\n        \"CodeG\": null,\n        \"CodeCB\": null,\n        \"CodePB\": null,\n        \"CodeE\": null,\n        \"CodeCL\": null,\n        \"CodeHG\": null,\n        \"CodePG\": null,\n        \"CodeNw\": null,\n        \"Code1\": null,\n        \"Code2\": null,\n        \"Code3\": null,\n        \"MaxOrdStrgLvl\": null,\n        \"MaxOrdStrgVol\": null,\n        \"MaxExtStrgLvl\": null,\n        \"MaxExtStrgVol\": null,\n        \"SpillwayLevel\": null,\n        \"SpillwayStorage\": null,\n        \"FreeSpillwayLevel\": null,\n        \"FreeSpillwayStorage\": null,\n        \"DeadStrgLevel\": null,\n        \"DeadStrgCapac\": null,\n        \"UsableStorageCapLev\": null,\n        \"UsableStorage\": null,\n        \"HoldingStorage\": null,\n        \"Key1fil\": null,\n        \"Key2fil\": null,\n        \"Key3fil\": null,\n        \"CritLevelSta\": null,\n        \"MinLevelSta\": null,\n        \"MaxLevelSta\": null,\n        \"CritFlow\": null,\n        \"MinDischarge\": null,\n        \"MaxDischarge\": null,\n        \"Stream\": null,\n        \"Distance\": null,\n        \"Infrastructure\": null,\n        \"Type\": null,\n        \"Usee\": null\n    },\n    {\n        \"Station\": \"01ARAKAK\",\n        \"StationName\": \"ARAKAKA\",\n        \"StationName2\": \"ARAKAKA\",\n        \"TimeZone\": \"GUY\",\n        \"Longitude\": 0,\n        \"Latitude\": 0,\n        \"Altitude\": 241.0,\n        \"Longitude2\": 0.0,\n        \"Latitude2\": 7.495278,\n        \"DMSlongitude\": \"\",\n        \"DMSLatitude\": \"07\\u00b029'43''\",\n        \"Statee\": \"R1\\r\",\n        \"RegManagmt\": null,\n        \"Catchment\": null,\n        \"Subcatchment\": null,\n        \"OperatnlRegion\": null,\n        \"HydroReg\": null,\n        \"RH(2)\": null,\n        \"Municipality\": null,\n        \"CodeB\": null,\n        \"CodeG\": null,\n        \"CodeCB\": null,\n        \"CodePB\": null,\n        \"CodeE\": null,\n        \"CodeCL\": null,\n        \"CodeHG\": null,\n        \"CodePG\": null,\n        \"CodeNw\": null,\n        \"Code1\": null,\n        \"Code2\": null,\n        \"Code3\": null,\n        \"MaxOrdStrgLvl\": null,\n        \"MaxOrdStrgVol\": null,\n        \"MaxExtStrgLvl\": null,\n        \"MaxExtStrgVol\": null,\n        \"SpillwayLevel\": null,\n        \"SpillwayStorage\": null,\n        \"FreeSpillwayLevel\": null,\n        \"FreeSpillwayStorage\": null,\n        \"DeadStrgLevel\": null,\n        \"DeadStrgCapac\": null,\n        \"UsableStorageCapLev\": null,\n        \"UsableStorage\": null,\n        \"HoldingStorage\": null,\n        \"Key1fil\": null,\n        \"Key2fil\": null,\n        \"Key3fil\": null,\n        \"CritLevelSta\": null,\n        \"MinLevelSta\": null,\n        \"MaxLevelSta\": null,\n        \"CritFlow\": null,\n        \"MinDischarge\": null,\n        \"MaxDischarge\": null,\n        \"Stream\": null,\n        \"Distance\": null,\n        \"Infrastructure\": null,\n        \"Type\": null,\n        \"Usee\": null\n    },...]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Stations"
+        ]
+      }
+    },
+    "/API/stations/qry_station": {
+      "get": {
+        "description": "Retrieve all metadata of specific station",
+        "summary": "Retrieve metadata for specific station in MCH database",
+        "parameters": [
+          {
+            "name": "stn_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this station",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Station MATTHEWS RIDGE": {
+                    "value": "[\n    {\n        \"Station\": \"01MATTRG\",\n        \"StationName\": \"MATTHEWS RIDGE\",\n        \"StationName2\": \"\",\n        \"TimeZone\": \"GUY\",\n        \"Longitude\": 0,\n        \"Latitude\": 0,\n        \"Altitude\": 0.0,\n        \"Longitude2\": 0.0,\n        \"Latitude2\": 0.0,\n        \"DMSlongitude\": \"\",\n        \"DMSLatitude\": \"\",\n        \"Statee\": \"R1\\r\",\n        \"RegManagmt\": null,\n        \"Catchment\": null,\n        \"Subcatchment\": null,\n        \"OperatnlRegion\": null,\n        \"HydroReg\": null,\n        \"RH(2)\": null,\n        \"Municipality\": null,\n        \"CodeB\": null,\n        \"CodeG\": null,\n        \"CodeCB\": null,\n        \"CodePB\": null,\n        \"CodeE\": null,\n        \"CodeCL\": null,\n        \"CodeHG\": null,\n        \"CodePG\": null,\n        \"CodeNw\": null,\n        \"Code1\": null,\n        \"Code2\": null,\n        \"Code3\": null,\n        \"MaxOrdStrgLvl\": null,\n        \"MaxOrdStrgVol\": null,\n        \"MaxExtStrgLvl\": null,\n        \"MaxExtStrgVol\": null,\n        \"SpillwayLevel\": null,\n        \"SpillwayStorage\": null,\n        \"FreeSpillwayLevel\": null,\n        \"FreeSpillwayStorage\": null,\n        \"DeadStrgLevel\": null,\n        \"DeadStrgCapac\": null,\n        \"UsableStorageCapLev\": null,\n        \"UsableStorage\": null,\n        \"HoldingStorage\": null,\n        \"Key1fil\": null,\n        \"Key2fil\": null,\n        \"Key3fil\": null,\n        \"CritLevelSta\": null,\n        \"MinLevelSta\": null,\n        \"MaxLevelSta\": null,\n        \"CritFlow\": null,\n        \"MinDischarge\": null,\n        \"MaxDischarge\": null,\n        \"Stream\": null,\n        \"Distance\": null,\n        \"Infrastructure\": null,\n        \"Type\": null,\n        \"Usee\": null\n    }\n]"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found if the station does not exist"
+          }
+        },
+        "tags": [
+          "Stations"
+        ]
+      }
+    },
+    "/API/stngroups": {
+      "get": {
+        "description": "Retrieve all stationgroups from the MCH database",
+        "summary": "Retrieve all stationgroups in MCH database",
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "MCH english database": {
+                    "value": "[\n    {\n        \"Stngroup\": \"Guyana\"\n    },\n    {\n        \"Stngroup\": \"Hydros\"\n    },\n    {\n        \"Stngroup\": \"Myanmar\"\n    }\n]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Stationgroups"
+        ]
+      }
+    },
+    "/API/stngroups/qry_stngroup": {
+      "get": {
+        "description": "Retrieve all station groups",
+        "summary": "Retrieve stations for specific station group in MCH database",
+        "parameters": [
+          {
+            "name": "stngp_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this station group",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Example stationgroup": {
+                    "value": "[\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 10,\n        \"Station\": \"Aishalton\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 20,\n        \"Station\": \"Albion\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 30,\n        \"Station\": \"AnnaRegina\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 40,\n        \"Station\": \"Apoteri\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 50,\n        \"Station\": \"BotanicalG\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 60,\n        \"Station\": \"Burma\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 70,\n        \"Station\": \"CopemanC\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 80,\n        \"Station\": \"Dawa\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 90,\n        \"Station\": \"EclipseFalls\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 100,\n        \"Station\": \"FlagStaff\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 110,\n        \"Station\": \"Ituni\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 120,\n        \"Station\": \"Iwokrama\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 130,\n        \"Station\": \"KaieteurFalls\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 140,\n        \"Station\": \"Kairuni\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 150,\n        \"Station\": \"Karanambu\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 160,\n        \"Station\": \"Karawab\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 170,\n        \"Station\": \"Kato\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 180,\n        \"Station\": \"Kofi\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 190,\n        \"Station\": \"Kumu\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 200,\n        \"Station\": \"Kuruduni\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 210,\n        \"Station\": \"Kwakwani\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 220,\n        \"Station\": \"LBI\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 230,\n        \"Station\": \"Leonora\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 240,\n        \"Station\": \"Lethem\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 250,\n        \"Station\": \"MaburaHill\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 260,\n        \"Station\": \"Malali\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 270,\n        \"Station\": \"Moco-Moco\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 280,\n        \"Station\": \"Moraikobai\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 290,\n        \"Station\": \"Moruca\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 300,\n        \"Station\": \"NewAmsterdam\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 310,\n        \"Station\": \"Orealla\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 320,\n        \"Station\": \"Parika\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 330,\n        \"Station\": \"PiraraRanch\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 340,\n        \"Station\": \"SantaFe\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 350,\n        \"Station\": \"StCuthbert\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 360,\n        \"Station\": \"StIgnatius\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 370,\n        \"Station\": \"Surama\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 380,\n        \"Station\": \"Timehri\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 390,\n        \"Station\": \"TumatumariFalls\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 400,\n        \"Station\": \"Uitvlugt\"\n    },\n    {\n        \"Stngroup\": \"Guyana\",\n        \"Secuen\": 410,\n        \"Station\": \"Wauna\"\n    }\n]"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found if the station does not exist"
+          }
+        },
+        "tags": [
+          "Stationgroups"
+        ]
+      }
+    },
+    "/API/variables": {
+      "get": {
+        "description": "Retrieve all variables",
+        "summary": "Retrieve all variables in MCH database",
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "MCH database basic configuration": {
+                    "value": "[\n    {\n        \"Variable\": \"AirTemp\"\n    },\n    {\n        \"Variable\": \"BaromPresMax\"\n    },\n    {\n        \"Variable\": \"BaromPresMin\"\n    },\n    {\n        \"Variable\": \"BaromPressure\"\n    },\n    {\n        \"Variable\": \"BateryVoltage\"\n    },\n    {\n        \"Variable\": \"cCloudHeight\"\n    },\n    {\n        \"Variable\": \"CloudCover\"\n    },\n    {\n        \"Variable\": \"CloudHeight\"\n    },\n    {\n        \"Variable\": \"CloudType\"\n    },\n    {\n        \"Variable\": \"DamArea\"\n    },\n    {\n        \"Variable\": \"DewPoint\"\n    },\n    {\n        \"Variable\": \"DirCloudy\"\n    },\n    {\n        \"Variable\": \"DirGust\"\n    },\n    {\n        \"Variable\": \"DirWindDom\"\n    },\n    {\n        \"Variable\": \"Discharge\"\n    },\n    {\n        \"Variable\": \"ElecStorm\"\n    },\n    {\n        \"Variable\": \"Entrance\"\n    },\n    {\n        \"Variable\": \"Evaporation\"\n    },\n    {\n        \"Variable\": \"EvapPiche\"\n    },\n    {\n        \"Variable\": \"Extraction\"\n    },\n    {\n        \"Variable\": \"Extraction2\"\n    },\n    {\n        \"Variable\": \"FloorTemp\"\n    },\n    {\n        \"Variable\": \"Fog\"\n    },\n    {\n        \"Variable\": \"Frost\"\n    },\n    {\n        \"Variable\": \"Gageheight\"\n    },\n    {\n        \"Variable\": \"GeopotHeight\"\n    },\n    {\n        \"Variable\": \"GeoTemp10\"\n    },\n    {\n        \"Variable\": \"GeoTemp20\"\n    },\n    {\n        \"Variable\": \"GeoTemp5\"\n    },\n    {\n        \"Variable\": \"GeoTemp50\"\n    },\n    {\n        \"Variable\": \"GraphPrecip\"\n    },\n    {\n        \"Variable\": \"GustSpeed\"\n    },\n    {\n        \"Variable\": \"Hail\"\n    },\n    {\n        \"Variable\": \"Heliophany\"\n    },\n    {\n        \"Variable\": \"HighCloudType\"\n    },\n    {\n        \"Variable\": \"HumTemp\"\n    },\n    {\n        \"Variable\": \"IndCloudCover\"\n    },\n    {\n        \"Variable\": \"InternTemp\"\n    },\n    {\n        \"Variable\": \"Level\"\n    },\n    {\n        \"Variable\": \"Level2\"\n    },\n    {\n        \"Variable\": \"Level3\"\n    },\n    {\n        \"Variable\": \"LowCloudType\"\n    },\n    {\n        \"Variable\": \"LowMidCloud\"\n    },\n    {\n        \"Variable\": \"MaxPrecip60\"\n    },\n    {\n        \"Variable\": \"MedCloudy\"\n    },\n    {\n        \"Variable\": \"MidCloudType\"\n    },\n    {\n        \"Variable\": \"Mist\"\n    },\n    {\n        \"Variable\": \"NetEvap\"\n    },\n    {\n        \"Variable\": \"NetRad\"\n    },\n    {\n        \"Variable\": \"NoSnowGround\"\n    },\n    {\n        \"Variable\": \"O2%\"\n    },\n    {\n        \"Variable\": \"O2mg/L\"\n    },\n    {\n        \"Variable\": \"PanelVoltage\"\n    },\n    {\n        \"Variable\": \"pH\"\n    },\n    {\n        \"Variable\": \"Precipitation\"\n    },\n    {\n        \"Variable\": \"PressTime\"\n    },\n    {\n        \"Variable\": \"PressTrend\"\n    },\n    {\n        \"Variable\": \"RelHum50\"\n    },\n    {\n        \"Variable\": \"RelHum80\"\n    },\n    {\n        \"Variable\": \"RelHum90\"\n    },\n    {\n        \"Variable\": \"RelHumidity\"\n    },\n    {\n        \"Variable\": \"RelHumMax\"\n    },\n    {\n        \"Variable\": \"RelHumMed\"\n    },\n    {\n        \"Variable\": \"RelHumMin\"\n    },\n    {\n        \"Variable\": \"RiverFlow\"\n    },\n    {\n        \"Variable\": \"RiverFlow2\"\n    },\n    {\n        \"Variable\": \"RiverVolume\"\n    },\n    {\n        \"Variable\": \"Saltiness\"\n    },\n    {\n        \"Variable\": \"SeaLevelPress\"\n    },\n    {\n        \"Variable\": \"SnowDepth\"\n    },\n    {\n        \"Variable\": \"SnowOnGround\"\n    },\n    {\n        \"Variable\": \"SolarRad\"\n    },\n    {\n        \"Variable\": \"SpeedWindDom\"\n    },\n    {\n        \"Variable\": \"Spillage\"\n    },\n    {\n        \"Variable\": \"Spillway\"\n    },\n    {\n        \"Variable\": \"StaticLevel\"\n    },\n    {\n        \"Variable\": \"SteamTension\"\n    },\n    {\n        \"Variable\": \"StrgVolume\"\n    },\n    {\n        \"Variable\": \"SunShine\"\n    },\n    {\n        \"Variable\": \"SunStroke\"\n    },\n    {\n        \"Variable\": \"TempMax\"\n    },\n    {\n        \"Variable\": \"TempMean\"\n    },\n    {\n        \"Variable\": \"TempMin\"\n    },\n    {\n        \"Variable\": \"TempMinInt\"\n    },\n    {\n        \"Variable\": \"TimePas1\"\n    },\n    {\n        \"Variable\": \"TimePas2\"\n    },\n    {\n        \"Variable\": \"Turbidity\"\n    },\n    {\n        \"Variable\": \"Visibility\"\n    },\n    {\n        \"Variable\": \"VisibilityE\"\n    },\n    {\n        \"Variable\": \"WaterDispon\"\n    },\n    {\n        \"Variable\": \"WaterExit\"\n    },\n    {\n        \"Variable\": \"WaterSpeed\"\n    },\n    {\n        \"Variable\": \"WaterTemp\"\n    },\n    {\n        \"Variable\": \"WindDirn\"\n    },\n    {\n        \"Variable\": \"WindJourney\"\n    },\n    {\n        \"Variable\": \"WindSpeed\"\n    }\n]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Variables"
+        ]
+      }
+    },
+    "/API/variables/qry_variable": {
+      "get": {
+        "description": "Retrieve definition for a specific variable",
+        "summary": "Retrieve definition for a specific variable",
+        "parameters": [
+          {
+            "name": "var_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "MCH variable example": {
+                    "value": "[\n    {\n        \"Variable\": \"Precipitation\",\n        \"VariabAbbrev\": \"PR\",\n        \"VariabDescrn\": \"Precipitaci\\u00f3n\",\n        \"TableName\": \"precipitation\",\n        \"Unit\": \"mm\",\n        \"TypeDDorDE\": \"DD\",\n        \"CumulType\": \"CUMU\",\n        \"NbrDecimal\": 2,\n        \"CalcbyGrp\": \"MEAN\",\n        \"CalcDTaD\": \"CUMULAT\"\n    }\n]"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found if the station does not exist"
+          }
+        },
+        "tags": [
+          "Variables"
+        ]
+      }
+    },
+    "/API/data/dailydata": {
+      "get": {
+        "description": "Retrieve daily data from MCH database",
+        "summary": "Retrieve daily data from MCH database",
+        "parameters": [
+          {
+            "name": "stn_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this station",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "var_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date_ini",
+            "in": "query",
+            "description": "string a globally unique identifier for this station",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date_end",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "datee",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "MCH dailydata example 1": {
+                    "value": "[\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-01T00:00:00Z\",\n        \"Value\": 7.8\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-02T00:00:00Z\",\n        \"Value\": 12.2\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-03T00:00:00Z\",\n        \"Value\": 10.5\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-04T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-05T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-06T00:00:00Z\",\n        \"Value\": 8.8\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-07T00:00:00Z\",\n        \"Value\": 9.0\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-08T00:00:00Z\",\n        \"Value\": 3.4\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-09T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-10T00:00:00Z\",\n        \"Value\": 9.6\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-11T00:00:00Z\",\n        \"Value\": 7.9\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-12T00:00:00Z\",\n        \"Value\": 1.5\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-13T00:00:00Z\",\n        \"Value\": 20.5\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-14T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-15T00:00:00Z\",\n        \"Value\": 23.6\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-16T00:00:00Z\",\n        \"Value\": 25.8\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-17T00:00:00Z\",\n        \"Value\": 0.9\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-18T00:00:00Z\",\n        \"Value\": 1.0\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-19T00:00:00Z\",\n        \"Value\": 11.5\n    },\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-20T00:00:00Z\",\n        \"Value\": 0.0\n    }\n]"
+                  },
+                  "MCH dailydata example 2": {
+                    "value": "[\n    {\n        \"Station\": \"01MATTRG\",\n        \"Date\": \"2013-11-01T00:00:00Z\",\n        \"Value\": 7.8\n    }\n]"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found if the station does not exist"
+          }
+        },
+        "tags": [
+          "Data"
+        ]
+      }
+    },
+    "/API/data/detaildata": {
+      "get": {
+        "description": "Retrieve detail data from MCH database",
+        "summary": "Retrieve detail data from MCH database",
+        "parameters": [
+          {
+            "name": "stn_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this station",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "var_id",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date_ini",
+            "in": "query",
+            "description": "string a globally unique identifier for this station",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date_end",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "datee",
+            "in": "query",
+            "description": "string a globally unique identifier for this variable",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK on success",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "MCH detaildata example 1": {
+                    "value": "[\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T00:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T01:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T01:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T02:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T02:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T03:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T03:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T04:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T04:30:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T05:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T05:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T06:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T06:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T07:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T07:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T08:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T08:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T09:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T09:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T10:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T10:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T11:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T11:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T12:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T12:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T13:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T13:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T14:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T14:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T15:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T15:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T16:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T16:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T17:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T17:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T18:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T18:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T19:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T19:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T20:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T20:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T21:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T21:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T22:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T22:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T23:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-01T23:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T00:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T01:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T01:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T02:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T02:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T03:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T03:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T04:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T04:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T05:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T05:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T06:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T06:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T07:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T07:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T08:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T08:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T09:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T09:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T10:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T10:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T11:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T11:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T12:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T12:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T13:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T13:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T14:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T14:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T15:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T15:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T16:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T16:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T17:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T17:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T18:00:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T18:30:00Z\",\n        \"Value\": 0.2\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T19:00:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T19:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T20:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T20:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T21:00:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T21:30:00Z\",\n        \"Value\": 0.2\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T22:00:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T22:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T23:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-02T23:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T00:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T01:00:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T01:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T02:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T02:30:00Z\",\n        \"Value\": 0.1\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T03:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T03:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T04:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T04:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T05:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T05:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T06:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T06:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T07:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T07:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T08:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T08:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T09:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T09:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T10:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T10:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T11:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T11:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T12:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T12:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T13:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T13:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T14:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T14:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T15:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T15:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T16:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T16:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T17:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T17:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T18:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T18:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T19:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T19:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T20:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T20:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T21:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T21:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T22:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T22:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T23:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-03T23:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T00:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T00:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T01:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T01:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T02:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T02:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T03:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T03:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T04:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T04:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T05:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T05:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T06:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T06:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T07:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T07:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T08:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T08:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T09:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T09:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T10:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T10:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T11:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T11:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T12:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T12:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T13:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T13:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T14:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T14:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T15:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T15:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T16:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T16:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T17:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T17:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T18:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T18:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T19:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T19:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T20:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T20:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T21:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T21:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T22:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T22:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T23:00:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-04T23:30:00Z\",\n        \"Value\": 0.0\n    },\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-05T00:00:00Z\",\n        \"Value\": 0.0\n    }\n]"
+                  },
+                  "MCH detaildata example 2": {
+                    "value": "[\n    {\n        \"Station\": \"2060\",\n        \"Date\": \"2019-04-30T10:00:00Z\",\n        \"Value\": 0.0\n    }\n]"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found if the station does not exist"
+          }
+        },
+        "tags": [
+          "Data"
+        ]
+      }
+    }
+  }
+}
