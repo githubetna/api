@@ -1,0 +1,24 @@
+mch
+mysql5
+2
+2
+C:\Archivos de programa\Mozilla Firefox\firefox.exe
+
+
+
+C:\Documents and Settings\carlos\Configuración local\Datos de programa\Google\Chrome\Application\chrome.exe
+C:\Archivos de programa\Opera\opera.exe
+C:\Archivos de programa\Mozilla Firefox\firefox.exe
+C:\Archivos de programa\Internet Explorer\iexplore.exe
+
+
+
+
+
+---------Formato de este archivo.
+1.- DSN a la base de datos
+2.- Tipo de base de datos. Por ahora solo se acepta mysql5
+3.- Idioma de la interfaz del usuario 1-Español, 2-Inglés, 3-Francés, 4-Otro, 5-Se requieren archivos externos
+4.- Idioma de la base de datos. 1-Español, 2-Inglés, 3-Francés, 4-Otro, 5-Se requieren archivos externos. NO esto debe
+    de fijarse de manera automática con un dato en una tabla. 
+5.- Navegador utilizado para la ayuda.
